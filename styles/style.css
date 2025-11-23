@@ -1,9 +1,30 @@
 body {
-  background-color: powderblue;
+  background-color: black;
 }
-h1 {
-  color: blue;
+
+#nav_bar {
+    background-color: red;
+    width: 10%;
+    align: left;
 }
-p {
-  color: red;
+
+#page_header {
+    background-color: blue;
+}
+
+.content {
+    background-color: green;
+    color: white;
+    word-wrap: break-word;
+}
+
+#page_body {
+    background-color: purple;
+    display: flex;
+}
+
+.project {
+}
+
+.experience {
 }
