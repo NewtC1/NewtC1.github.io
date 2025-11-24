@@ -1,26 +1,35 @@
 body {
   background-color: black;
+  margin: auto
 }
 
 #nav_bar {
     background-color: red;
-    width: 10%;
+    width: 30%;
     align: left;
 }
 
 #page_header {
     background-color: blue;
+    margin: auto;
+    width: 30%;
+    text-align: center;
 }
 
 .content {
     background-color: green;
     color: white;
     word-wrap: break-word;
+    width: 70%;
+    align: left;
 }
 
 #page_body {
     background-color: purple;
     display: flex;
+    border: 2px solid powderblue;
+    margin: auto;
+    width: 50%
 }
 
 .project {
