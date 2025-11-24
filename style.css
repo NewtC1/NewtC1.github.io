@@ -2,12 +2,6 @@ body {
   margin: auto
 }
 
-#nav_bar {
-    background-color: red;
-    width: 30%;
-    align: left;
-}
-
 /* Container for flexboxes */
 section {
   display: -webkit-flex;
@@ -37,16 +31,13 @@ nav ul {
 }
 
 .content {
-    background-color: green;
     word-wrap: break-word;
     width: 100%;
     align: left;
 }
 
 #page_body {
-    background-color: purple;
     display: flex;
-    border: 2px solid powderblue;
     margin: auto;
     width: 50%
 }
@@ -56,7 +47,6 @@ article {
     -webkit-flex: 3;
     -ms-flex: 3;
     flex: 3;
-    background-color: #f1f1f1;
     padding: 10px;
 }
 
