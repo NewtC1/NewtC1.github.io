@@ -2,11 +2,6 @@ body {
   margin: auto
 }
 
-/* Container for flexboxes */
-section {
-  display: -webkit-flex;
-  display: flex;
-}
 
 /* Style the navigation menu */
 nav {
@@ -31,7 +26,6 @@ header {
 }
 
 .content {
-    word-wrap: break-word;
     width: 100%;
     align: left;
 }
@@ -39,19 +33,12 @@ header {
 #page_body {
     display: flex;
     margin: auto;
-    width: 50%
+    width: 80%
 }
 
 /* Style the content */
 article {
-    -webkit-flex: 3;
-    -ms-flex: 3;
     flex: 3;
     padding: 10px;
 }
 
-.project {
-}
-
-.experience {
-}
