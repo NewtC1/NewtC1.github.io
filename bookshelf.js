@@ -13,6 +13,7 @@ function randomChoice(array) {
 let spines = Object.values(document.getElementsByClassName("spine"));
 let covers = Object.values(document.getElementsByClassName("cover"));
 let tops = Object.values(document.getElementsByClassName("top"));
+let inner_pages = Object.values(document.getElementsByClassName("inner-page"));
 
 let availablePatterns = getRootCssStyles();
 
@@ -40,6 +41,9 @@ spines.map(function (s, i) {
 
   covers[i].style.height = `${randomHeight}px`;
   covers[i].style.top = `${280 - randomHeight}px`;
+
+  inner_pages[i].style.height = `${randomHeight}px`;
+  inner_pages[i].style.top = `${280 - randomHeight}px`;
 
   tops[i].style.top = `${280 - randomHeight}px`;
 });

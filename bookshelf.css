@@ -208,8 +208,34 @@
     transition: transform 1s;
 }
 
+.inner-page {
+    background-color: white;
+    width: 190px;
+    height: 280px;
+    top: 0px;
+    left: 50px;
+    background-size: contain;
+    transform: rotateY(90deg) translateZ(0);
+    overflow: clip;
+    z-index: -1;
+
+}
+
 .book:hover {
     z-index: 1;
     transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
       translateX(-30px);
+}
+
+.book:click {
+}
+
+.cover:hover {
+    transform: rotateY(-75deg)
+}
+
+.inner-page:hover {
+    background-color: blue;
+    transform: rotateY(0deg), scale(1.5);
+    z-index:2;
 }
