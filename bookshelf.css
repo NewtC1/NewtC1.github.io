@@ -233,9 +233,3 @@
 .cover:hover {
     transform: rotateY(-75deg)
 }
-
-.inner-page:hover {
-    background-color: blue;
-    transform: rotateY(0deg), scale(1.5);
-    z-index:2;
-}
