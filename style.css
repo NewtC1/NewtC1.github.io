@@ -1,7 +1,8 @@
 body {
-  margin: auto
+  margin: auto;
+  background-color: black;
+  background-image: linear-gradient(to bottom, gray, yellow, white);
 }
-
 
 /* Style the navigation menu */
 nav {
@@ -28,6 +29,7 @@ header {
 .content {
     width: 100%;
     align: left;
+
 }
 
 #page_body {
