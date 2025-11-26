@@ -1,3 +1,5 @@
+
+
 import { getRootCssStyles} from './cssUtils.js';
 
 function getRandomInt(min, max) {
@@ -48,14 +50,26 @@ spines.map(function (s, i) {
   tops[i].style.top = `${280 - randomHeight}px`;
 });
 //
-// lazy load the book covers on hover
+// lazy load the book covers on hover, do extra animations on hover
 let books = Object.values(document.getElementsByClassName("book"));
 books.map(function (b, i) {
   b.onmouseover = function () {
     let covers = b.getElementsByClassName("cover");
     Array.from(covers).map(function (c, i) {
-      c.style.backgroundImage = "url(" + c.getAttribute("img") + ")";
+        c.style.backgroundImage = "url(" + c.getAttribute("img") + ")";
+
+      $(b).click( function() {
+            c.style.transform = "rotateY(-75deg)";
+        })
     }
     )
+
   };
+
+  // reset the cover position when moving to a new element.
+  b.onmouseleave = function () {
+  Array.from(covers).map(function (c, i) {
+    c.style.transform = "rotateY(90deg)";
+  })
+  }
 });

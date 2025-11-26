@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css"/>
         <link rel="stylesheet" href="bookshelf.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Newt's Portfolio</title>
     </head>
     <body>
@@ -14,42 +15,6 @@
         <div id="page_body">
             <!-- content -->
             <div class="content">
-                <!-- <article>
-                    <h2>A fascination with stories</h2>
-                    <p>
-                        Welcome! I am Newt, a strange creature searching for meaning in a life defined by meaninglessness.
-                        I've been fascinated by stories of all kinds, and use them as a way to derive meaning. I started life
-                        as a programmer, but have since turned into more of a researcher and writer. While I'm fascinated
-                        by stories of all kinds and mediums, I am trying to teach myself the art of adaptation rather than
-                        creation. My interest in how these tales mutate with each retelling, and as such I do a lot of writing
-                        on established works.
-                    </p>
-
-                    <h2>Multifaceted and flexible</h2>
-                    <p>
-                        I went to college for programming, but have always had a love of art. I've spent some time doing 3D modeling,
-                        drawing and even some real life sculpting. During my time as a Twitch streamer I put my abilities as a
-                        writer to use, allowing me to craft a world that my stream's events took place in. As a YouTube creator I started
-                        to use Gimp more often, and now have a decent understanding of how to make professional looking thumbnails for
-                        the purposes of attracting attention. On top of all of this, I spend plenty of time writing and reviewing scripts
-                        and working with others on videos. None of my projects are solo, though I arguably have the largest part in each one.
-                    </p>
-
-                    <h2>A problem solver at heart</h2>
-                    <p>
-                        Due to my large number of interests, I'm always driven to learn new skills. This means I'm constantly
-                        facing situations or problems I've never seen before, or looking back at issues I once thought impossible
-                        with my current skill set. I despise working on the same rote issues day after day, which has led me
-                        to quit a few jobs once I felt I wasn't learning anything new from them.
-                    </p>
-
-                    <h2>Dedication to the craft</h2>
-                    <p>
-                        Regardless of what I do, I do not do so half-heartedly. I have been known to spend years on my passion projects.
-                        I don't expect that to change anytime soon. Works on projects like my Lobotomy Corporation story retrospective
-                        took over a year, and if I'm capable to doing projects like this while still feeding myself, I absolutely will.
-                    </p>
-                </article> -->
                 <div class="bookshelf">
                     <div class="book">
                         <div class="side spine">
@@ -75,6 +40,14 @@
                         <div class="side top"></div>
                         <div class="side cover" img="Capture.PNG"></div>
                         <div class="side inner-page">
+                            <p>
+                                I went to college for programming, but have always had a love of art. I've spent some time doing 3D modeling,
+                                drawing and even some real life sculpting. During my time as a Twitch streamer I put my abilities as a
+                                writer to use, allowing me to craft a world that my stream's events took place in. As a YouTube creator I started
+                                to use Gimp more often, and now have a decent understanding of how to make professional looking thumbnails for
+                                the purposes of attracting attention. On top of all of this, I spend plenty of time writing and reviewing scripts
+                                and working with others on videos. None of my projects are solo, though I arguably have the largest part in each one.
+                            </p>
                         </div>
                     </div>
                     <div class="book">
@@ -84,6 +57,12 @@
                         <div class="side top"></div>
                         <div class="side cover" img="Capture.PNG"></div>
                         <div class="side inner-page">
+                            <p>
+                                Due to my large number of interests, I'm always driven to learn new skills. This means I'm constantly
+                                facing situations or problems I've never seen before, or looking back at issues I once thought impossible
+                                with my current skill set. I despise working on the same rote issues day after day, which has led me
+                                to quit a few jobs once I felt I wasn't learning anything new from them.
+                            </p>
                         </div>
                     </div>
                     <div class="book">
@@ -93,6 +72,11 @@
                         <div class="side top"></div>
                         <div class="side cover" img="Capture.PNG"></div>
                         <div class="side inner-page">
+                            <p>
+                                Regardless of what I do, I do not do so half-heartedly. I have been known to spend years on my passion projects.
+                                I don't expect that to change anytime soon. Works on projects like my Lobotomy Corporation story retrospective
+                                took over a year, and if I'm capable to doing projects like this while still feeding myself, I absolutely will.
+                            </p>
                         </div>
                     </div>
                     <div class="book">
@@ -165,7 +149,16 @@
                         </div>
                         <div class="side top"></div>
                         <div class="side cover" img="Capture.PNG"></div>
-                        <div class="side inner-page">
+                        <div class="side inner-page" onmouseenter="expandBook(this)" onmouseleave="hideBook(this)">
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="side spine">
+                            <span class="spine-title"> The Phonebook </span>
+                        </div>
+                        <div class="side top"></div>
+                        <div class="side cover" img="Capture.PNG"></div>
+                        <div class="side inner-page" onmouseenter="expandBook(this)" onmouseleave="hideBook(this)">
                         </div>
                     </div>
                 </div>
@@ -173,4 +166,12 @@
         </div>
     </body>
     <script type="module" src="bookshelf.js"></script>
+    <script>
+        function expandBook(x) {
+            x.style.backgroundColor="blue";
+        }
+        function hideBook(x) {
+            x.style.backgroundColor="white";
+        }
+    </script>
 </html> 

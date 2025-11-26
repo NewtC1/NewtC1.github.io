@@ -227,9 +227,6 @@
       translateX(-30px);
 }
 
-.book:click {
-}
-
-.cover:hover {
+/*.cover:hover {
     transform: rotateY(-75deg)
-}
+}*/
