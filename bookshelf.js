@@ -12,6 +12,12 @@ function randomChoice(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
+function move(oldParent, newParent) {
+  for (let i = 0; i <oldParent.childNodes.length; i++) {
+    newParent.appendChild(oldParent.childNodes[i].cloneNode(true));
+  }
+}
+
 let spines = Object.values(document.getElementsByClassName("spine"));
 let covers = Object.values(document.getElementsByClassName("cover"));
 let tops = Object.values(document.getElementsByClassName("top"));
@@ -66,9 +72,11 @@ books.map(function (b, i) {
             cover_open = true;
         }
         else {
-            let left_page = Object.values(document.getElementsByClassName("left-page"));
+            let left_page = document.querySelector(".left-page");
             let inner_page = b.querySelector(".inner-page");
-            left_page[0].innerHTML = inner_page.innerHTML;
+            // clear any content that was on the lectern
+            left_page.innerHTML = ""
+            move(inner_page, left_page)
         }
         };
     }
