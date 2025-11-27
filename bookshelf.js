@@ -49,27 +49,39 @@ spines.map(function (s, i) {
 
   tops[i].style.top = `${280 - randomHeight}px`;
 });
-//
+
 // lazy load the book covers on hover, do extra animations on hover
 let books = Object.values(document.getElementsByClassName("book"));
+let cover_open = false;
 books.map(function (b, i) {
   b.onmouseover = function () {
     let covers = b.getElementsByClassName("cover");
     Array.from(covers).map(function (c, i) {
         c.style.backgroundImage = "url(" + c.getAttribute("img") + ")";
 
-      $(b).click( function() {
+      // On single click, open the cover. Click while the cover is open and it will expand the book.
+      b.onclick = function() {
+       if (cover_open != true) {
             c.style.transform = "rotateY(-75deg)";
-        })
+            cover_open = true;
+        }
+        else {
+            let left_page = Object.values(document.getElementsByClassName("left-page"));
+            let inner_page = b.querySelector(".inner-page");
+            left_page[0].innerHTML = inner_page.innerHTML;
+        }
+        };
     }
     )
 
   };
 
+
   // reset the cover position when moving to a new element.
   b.onmouseleave = function () {
   Array.from(covers).map(function (c, i) {
     c.style.transform = "rotateY(90deg)";
+    cover_open = false;
   })
   }
 });
