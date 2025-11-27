@@ -26,6 +26,9 @@
     border: 1px solid black;
     background: white;
     overflow: clip;
+    margin: auto;
+    padding: 15px;
+    word-wrap: break;
 }
 
 .left-page {
