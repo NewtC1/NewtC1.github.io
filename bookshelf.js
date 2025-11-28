@@ -63,7 +63,7 @@ books.map(function (b, i) {
   b.onmouseover = function () {
     let covers = b.getElementsByClassName("cover");
     Array.from(covers).map(function (c, i) {
-        c.style.backgroundImage = "url(https://github.com/NewtC1/NewtC1.github.io/blob/main/" + c.getAttribute("img") + ")";
+        c.style.backgroundImage = "url(/images/" + c.getAttribute("img") + ")";
 
       // On single click, open the cover. Click while the cover is open and it will expand the book.
       b.onclick = function() {
