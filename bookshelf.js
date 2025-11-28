@@ -73,10 +73,15 @@ books.map(function (b, i) {
                 }
                 else {
                     let left_page = document.querySelector(".left-page");
+                    let right_page = document.querySelector(".right-page");
                     let inner_page = b.querySelector(".inner-page");
                     // clear any content that was on the lectern
                     left_page.innerHTML = ""
+                    // load the contents of the book into the left page.
                     move(inner_page, left_page)
+
+                    // load the cover image into the right page.
+                    right_page.innerHTML = "<img src=/images/" + c.getAttribute("img") + ">"
                 }
             };
         })

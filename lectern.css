@@ -1,5 +1,5 @@
 .lectern {
-    height: 600px;
+    height: 900px;
     width: 80%;
     background: brown;
     align-self: center;
@@ -47,4 +47,10 @@
 
 .right-page {
     transform-origin: center left;
+}
+
+.right-page img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
