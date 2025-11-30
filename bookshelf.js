@@ -59,6 +59,7 @@ spines.map(function (s, i) {
 // lazy load the book covers on hover, do extra animations on hover
 let books = Object.values(document.getElementsByClassName("book"));
 let cover_open = false;
+let selected_book = books[0];
 books.map(function (b, i) {
     b.onmouseover = function () {
         let covers = b.getElementsByClassName("cover");
@@ -81,7 +82,13 @@ books.map(function (b, i) {
                     move(inner_page, left_page)
 
                     // load the cover image into the right page.
-                    right_page.innerHTML = "<img src=/images/" + c.getAttribute("img") + ">"
+                    right_page.innerHTML = "<img src=/images/" + c.getAttribute("img") + ">";
+                    // hide the selected book
+                    b.style.visibility = 'hidden';
+                    selected_book.style.visibility = 'visible';
+                    // set the new book as selected.
+                    selected_book = b;
+
                 }
             };
         })
