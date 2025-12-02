@@ -1,16 +1,16 @@
 .lectern {
-    height: 900px;
-    width: 80%;
+    aspect-ratio: 16/9;
+    max-width: 90%;
     background: brown;
     background-image: url("images/lectern_back.jpg");
-    align-self: center;
+    justify-content: center;
     display: flex;
     margin: auto;
     z-index: 2;
 }
 
 .lectern-book {
-    width: 90%;
+    width: 80%;
     height: 90%;
     display: flex;
     background: sienna;
@@ -22,13 +22,13 @@
 }
 
 .bottom {
-    height: 2%;
     box-shadow: 0px -6px 2px 1px;
+    width: 100%;
+    max-height: 2%;
 }
 
 .base {
-    width: 20%;
-    height: 10%;
+
 }
 
 .lectern-book span {

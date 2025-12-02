@@ -130,14 +130,10 @@
   }
 
 .bookshelf {
-    width: 100%;
-    margin-top: 32px;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     background-color: sienna;
-    border-color: brown;
-    border-style: solid;
-    border-width: 10px;
 }
 
 .book {

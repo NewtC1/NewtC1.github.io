@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    background-color: gray;
+    justify-content: center;
+}
 
 /* Style the navigation menu */
 nav {
@@ -21,12 +28,6 @@ header {
 }
 
 .content {
-    width: 100%;
-}
-
-#page_body {
-    display: flex;
-    margin: auto;
     width: 100%;
 }
 
