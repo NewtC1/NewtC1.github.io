@@ -130,10 +130,12 @@
   }
 
 .bookshelf {
-    width: 80%;
+    width: 95%;
+    height: 280px;
     display: flex;
     flex-wrap: wrap;
-    background-color: sienna;
+    border-bottom: ridge 30px;
+
 }
 
 .book {
@@ -219,10 +221,5 @@
 
 .book:hover {
     z-index: 1;
-    transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
-      translateX(-30px);
+    transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px) translateX(-30px);
 }
-
-/*.cover:hover {
-    transform: rotateY(-75deg)
-}*/
