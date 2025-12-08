@@ -120,14 +120,13 @@ books.map(function (b, i) {
                     let left_page = document.querySelector(".left-page");
                     let right_page = document.querySelector(".right-page");
                     let inner_page = b.querySelector(".inner-page");
-                    let animation_book = document.querySelector(".animation-book");
+                    // let animation_book = document.querySelector(".animation-book");
                     let lectern_book = document.querySelector(".lectern-book");
 
                     //move the book to the center of the lectern's book.
                     let offset = calcOffset(b, lectern_book);
-
                     b.style.transform = "translate("+ offset.x + "px, " + offset.y + "px)";
-                    b.style.opacity = "0";
+                    lectern_book.classList.add("book-selected");
 
                     // clear any content that was on the lectern
                     left_page.innerHTML = "";
@@ -139,7 +138,7 @@ books.map(function (b, i) {
                     // load the cover image into the right page.
                     right_page.innerHTML = "<img src=/images/" + c.getAttribute("img") + ">";
                     // hide the selected book
-                    // b.style.visibility = 'hidden';
+                    b.style.opacity = '0';
                     // reveal the previous book and move it back to the book shelf.
                     selected_book.style.opacity = '1';
                     selected_book.style.transform = "translateZ(0) rotateY(0)";
