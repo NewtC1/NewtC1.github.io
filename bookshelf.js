@@ -20,11 +20,47 @@ function move(oldParent, newParent) {
 
 function getLecternBookCenter() {
     let lectern_book = document.querySelector(".lectern-book");
-    let boundingRect = lectern_book.getBoundingClientRect();
-    let boundingY = (boundingRect.bottom - boundingRect.top)/2;
-    let boundingX = (boundingRect.right - boundingRect.left)/2;
-    return Array(boundingX, boundingY);
+    let boundingRect = getAbsolutePosition(lectern_book);
+    let boundingY = ((boundingRect.top + window.scrollY) - (lectern_book.style.height/2));
+    let boundingX = ((boundingRect.left + window.scrollX) - (lectern_book.style.width/2));
+    return {
+        x: boundingX,
+        y: boundingY
+    };
 }
+
+function getAbsolutePosition(element) {
+    const rect = element.getBoundingClientRect();
+
+    return {
+        top: rect.top + window.scrollY,    // Add vertical scroll
+        left: rect.left + window.scrollX,  // Add horizontal scroll
+        bottom: rect.bottom + window.scrollY,
+        right: rect.right + window.scrollX
+    };
+}
+
+function calcOffset(from, to) {
+    let fromPosition = getAbsolutePosition(from);
+    let toPosition = getAbsolutePosition(to);
+
+    let toAbsoluteCenter = {
+        x: toPosition.right - (to.offsetWidth/2),
+        y: toPosition.bottom - (to.offsetHeight/2)
+    };
+
+    let fromAbsoluteCenter = {
+        x: fromPosition.right - (from.offsetWidth/2),
+        y: fromPosition.bottom - (from.offsetHeight/2)
+    };
+
+    return {
+        x: (toAbsoluteCenter.x - fromAbsoluteCenter.x),
+        y: (toAbsoluteCenter.y - fromAbsoluteCenter.y)
+    };
+
+}
+
 
 let spines = Object.values(document.getElementsByClassName("spine"));
 let covers = Object.values(document.getElementsByClassName("cover"));
@@ -85,10 +121,12 @@ books.map(function (b, i) {
                     let right_page = document.querySelector(".right-page");
                     let inner_page = b.querySelector(".inner-page");
                     let animation_book = document.querySelector(".animation-book");
+                    let lectern_book = document.querySelector(".lectern-book");
 
                     //move the book to the center of the lectern's book.
-                    let center = getLecternBookCenter();
-                    b.style.transform = "translate("+ center[0] + "px, " + center[0] + "px)";
+                    let offset = calcOffset(b, lectern_book);
+
+                    b.style.transform = "translate("+ offset.x + "px, " + offset.y + "px)";
 
                     // clear any content that was on the lectern
                     left_page.innerHTML = "";
@@ -100,7 +138,7 @@ books.map(function (b, i) {
                     // load the cover image into the right page.
                     right_page.innerHTML = "<img src=/images/" + c.getAttribute("img") + ">";
                     // hide the selected book
-                    b.style.visibility = 'hidden';
+                    // b.style.visibility = 'hidden';
                     // reveal the previous book and move it back to the book shelf.
                     selected_book.style.visibility = 'visible';
                     selected_book.style.transform = "translateZ(0) rotateY(0)";
