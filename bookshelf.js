@@ -127,6 +127,7 @@ books.map(function (b, i) {
                     let offset = calcOffset(b, lectern_book);
 
                     b.style.transform = "translate("+ offset.x + "px, " + offset.y + "px)";
+                    b.style.opacity = "0";
 
                     // clear any content that was on the lectern
                     left_page.innerHTML = "";
@@ -140,7 +141,7 @@ books.map(function (b, i) {
                     // hide the selected book
                     // b.style.visibility = 'hidden';
                     // reveal the previous book and move it back to the book shelf.
-                    selected_book.style.visibility = 'visible';
+                    selected_book.style.opacity = '1';
                     selected_book.style.transform = "translateZ(0) rotateY(0)";
                     // set the new book as selected.
                     selected_book = b;
