@@ -141,7 +141,7 @@ books.map(function (b, i) {
                     b.style.opacity = '0';
                     // reveal the previous book and move it back to the book shelf.
                     selected_book.style.opacity = '1';
-                    selected_book.style.transform = "translateZ(0) rotateY(0)";
+                    selected_book.style.transform = "";
                     // set the new book as selected.
                     selected_book = b;
 
